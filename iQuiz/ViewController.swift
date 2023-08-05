@@ -17,11 +17,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        configuraLayout()
     }
     
     func configuraLayout() {
-        botaoIniciarQuiz.layer.cornerRadius = 12.0
+        botaoIniciarQuiz.layer.cornerRadius = 12
     }
 
 
