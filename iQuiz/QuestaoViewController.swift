@@ -17,12 +17,7 @@ class QuestaoViewController: UIViewController {
     @IBOutlet var botoesRespostas: [UIButton]!
     
     @IBAction func respostaBotao(_ resposta: UIButton) {
-        let respostaCorreta: Bool = questoes[numeroQuestao].respostaCorreta == resposta.tag
-        
-        if respostaCorreta {
-            pontuacao += 1
-        }
-        
+        verificarResposta(resposta)
         proximaQuestao()
     }
     
@@ -44,18 +39,30 @@ class QuestaoViewController: UIViewController {
         }
     }
     
-    func proximaQuestao() {
-        if numeroQuestao < questoes.count - 1 {
-            numeroQuestao += 1
-            configurarQuestao()
+    func verificarResposta(_ resposta: UIButton) {
+        let respostaCorreta: Bool = questoes[numeroQuestao].respostaCorreta == resposta.tag
+        
+        if respostaCorreta {
+            pontuacao += 1
+            resposta.backgroundColor = UIColor(red: 11/255, green: 161/255, blue: 53/255, alpha: 1.0)
+        } else {
+            resposta.backgroundColor = UIColor(red: 211/255, green: 17/255, blue: 17/255, alpha: 1.0)
         }
     }
     
-    func configurarQuestao() {
+    func proximaQuestao() {
+        if numeroQuestao < questoes.count - 1 {
+            numeroQuestao += 1
+            Timer.scheduledTimer(timeInterval: 0.75, target: self, selector: #selector(configurarQuestao), userInfo: nil, repeats: false)
+        }
+    }
+    
+    @objc func configurarQuestao() {
         tituloQuestao.text = questoes[numeroQuestao].titulo
         for botao in botoesRespostas {
             let tituloRespostaBotao = questoes[numeroQuestao].respostas[botao.tag]
             botao.setTitle(tituloRespostaBotao, for: .normal)
+            botao.backgroundColor = UIColor(red: 116/255, green: 50/255, blue: 255/255, alpha: 1.0)
         }
     }
     
