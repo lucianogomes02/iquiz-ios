@@ -8,6 +8,9 @@
 import UIKit
 
 class QuestaoViewController: UIViewController {
+    
+    var pontuacao: Int = 0
+    var numeroQuestao: Int = 0
 
     @IBOutlet weak var tituloQuestao: UILabel!
     
@@ -23,13 +26,20 @@ class QuestaoViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         configurarLayout()
+        configurarQuestao()
     }
     
     func configurarLayout() {
         navigationItem.hidesBackButton = true
+        tituloQuestao.numberOfLines = 0
+        tituloQuestao.textAlignment = .center
         for botao in botoesRespostas {
             botao.layer.cornerRadius = 12.0
         }
+    }
+    
+    func configurarQuestao() {
+        tituloQuestao.text = questoes[numeroQuestao].titulo
     }
     
 

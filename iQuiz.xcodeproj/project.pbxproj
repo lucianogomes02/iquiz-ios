@@ -14,6 +14,7 @@
 		BA6574562A7B6ED70043BFA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6574552A7B6ED70043BFA2 /* Assets.xcassets */; };
 		BA6574592A7B6ED70043BFA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6574572A7B6ED70043BFA2 /* LaunchScreen.storyboard */; };
 		BA91D9252A7E0D8400947562 /* QuestaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA91D9242A7E0D8400947562 /* QuestaoViewController.swift */; };
+		BAFBB5402A80B8A600E38DC5 /* Questao.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFBB53F2A80B8A600E38DC5 /* Questao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BA6574582A7B6ED70043BFA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA65745A2A7B6ED70043BFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA91D9242A7E0D8400947562 /* QuestaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestaoViewController.swift; sourceTree = "<group>"; };
+		BAFBB53F2A80B8A600E38DC5 /* Questao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				BA6574572A7B6ED70043BFA2 /* LaunchScreen.storyboard */,
 				BA65745A2A7B6ED70043BFA2 /* Info.plist */,
 				BA91D9242A7E0D8400947562 /* QuestaoViewController.swift */,
+				BAFBB53F2A80B8A600E38DC5 /* Questao.swift */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				BA6574512A7B6ED60043BFA2 /* ViewController.swift in Sources */,
 				BA65744D2A7B6ED60043BFA2 /* AppDelegate.swift in Sources */,
 				BA65744F2A7B6ED60043BFA2 /* SceneDelegate.swift in Sources */,
+				BAFBB5402A80B8A600E38DC5 /* Questao.swift in Sources */,
 				BA91D9252A7E0D8400947562 /* QuestaoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
