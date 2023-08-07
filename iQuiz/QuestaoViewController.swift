@@ -22,6 +22,8 @@ class QuestaoViewController: UIViewController {
         if respostaCorreta {
             pontuacao += 1
         }
+        
+        proximaQuestao()
     }
     
     override func viewDidLoad() {
@@ -39,6 +41,13 @@ class QuestaoViewController: UIViewController {
         tituloQuestao.textAlignment = .center
         for botao in botoesRespostas {
             botao.layer.cornerRadius = 12.0
+        }
+    }
+    
+    func proximaQuestao() {
+        if numeroQuestao < questoes.count - 1 {
+            numeroQuestao += 1
+            configurarQuestao()
         }
     }
     
