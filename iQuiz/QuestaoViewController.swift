@@ -16,8 +16,12 @@ class QuestaoViewController: UIViewController {
     
     @IBOutlet var botoesRespostas: [UIButton]!
     
-    @IBAction func respostaBotao(_ sender: UIButton) {
+    @IBAction func respostaBotao(_ resposta: UIButton) {
+        let respostaCorreta: Bool = questoes[numeroQuestao].respostaCorreta == resposta.tag
         
+        if respostaCorreta {
+            pontuacao += 1
+        }
     }
     
     override func viewDidLoad() {
