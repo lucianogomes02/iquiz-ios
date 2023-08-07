@@ -9,10 +9,27 @@ import UIKit
 
 class QuestaoViewController: UIViewController {
 
+    @IBOutlet weak var tituloQuestao: UILabel!
+    
+    @IBOutlet var botoesRespostas: [UIButton]!
+    
+    @IBAction func respostaBotao(_ sender: UIButton) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        configurarLayout()
+    }
+    
+    func configurarLayout() {
+        navigationItem.hidesBackButton = true
+        for botao in botoesRespostas {
+            botao.layer.cornerRadius = 12.0
+        }
     }
     
 
