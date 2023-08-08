@@ -22,11 +22,19 @@ class DesempenhoViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         configurarLayout()
+        configurarDesempenho()
     }
     
     func configurarLayout() {
         navigationItem.hidesBackButton = true
         botaoReiniciarQuiz.layer.cornerRadius = 12.0
+    }
+    
+    func configurarDesempenho() {
+        guard let pontuacao = pontuacao else {return}
+        resultadoQuiz.text = "Você acertou \(pontuacao) de \(questoes.count) questões."
+        let percentual  = (pontuacao * 100) / questoes.count
+        percentualDeAcertos.text = "Percentual final: \(percentual)%"
     }
     
 
