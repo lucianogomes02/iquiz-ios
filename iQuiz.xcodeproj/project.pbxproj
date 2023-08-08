@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA1136002A81CBF600918E85 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1135FF2A81CBF600918E85 /* UIColor+.swift */; };
 		BA65744D2A7B6ED60043BFA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65744C2A7B6ED60043BFA2 /* AppDelegate.swift */; };
 		BA65744F2A7B6ED60043BFA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65744E2A7B6ED60043BFA2 /* SceneDelegate.swift */; };
 		BA6574512A7B6ED60043BFA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6574502A7B6ED60043BFA2 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA1135FF2A81CBF600918E85 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		BA6574492A7B6ED60043BFA2 /* iQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA65744C2A7B6ED60043BFA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA65744E2A7B6ED60043BFA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA1135FC2A81CBA200918E85 /* Extensões */ = {
+			isa = PBXGroup;
+			children = (
+				BA1135FF2A81CBF600918E85 /* UIColor+.swift */,
+			);
+			name = "Extensões";
+			path = "Extensões";
+			sourceTree = "<group>";
+		};
 		BA6574402A7B6ED60043BFA2 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +73,7 @@
 		BA65744B2A7B6ED60043BFA2 /* iQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				BA1135FC2A81CBA200918E85 /* Extensões */,
 				BABC2D882A81CA2A00B273A7 /* Modelo */,
 				BABC2D872A81C9FA00B273A7 /* ViewController */,
 				BA65744C2A7B6ED60043BFA2 /* AppDelegate.swift */,
@@ -169,6 +181,7 @@
 				BAFBB5402A80B8A600E38DC5 /* Questao.swift in Sources */,
 				BAD69C902A81BAFF00B3452A /* DesempenhoViewController.swift in Sources */,
 				BA91D9252A7E0D8400947562 /* QuestaoViewController.swift in Sources */,
+				BA1136002A81CBF600918E85 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

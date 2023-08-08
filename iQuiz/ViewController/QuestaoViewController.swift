@@ -12,9 +12,9 @@ class QuestaoViewController: UIViewController {
     var pontuacao: Int = 0
     var numeroQuestao: Int = 0
 
-    @IBOutlet weak var tituloQuestao: UILabel!
+    @IBOutlet weak var questao: UILabel!
     
-    @IBOutlet var botoesRespostas: [UIButton]!
+    @IBOutlet var respostas: [UIButton]!
     
     @IBAction func respostaBotao(_ resposta: UIButton) {
         verificarResposta(resposta)
@@ -23,18 +23,15 @@ class QuestaoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
         configurarLayout()
         configurarQuestao()
     }
     
     func configurarLayout() {
         navigationItem.hidesBackButton = true
-        tituloQuestao.numberOfLines = 0
-        tituloQuestao.textAlignment = .center
-        for botao in botoesRespostas {
+        questao.numberOfLines = 0
+        questao.textAlignment = .center
+        for botao in respostas {
             botao.layer.cornerRadius = 12.0
         }
     }
@@ -44,37 +41,55 @@ class QuestaoViewController: UIViewController {
         
         if respostaCorreta {
             pontuacao += 1
-            resposta.backgroundColor = UIColor(red: 11/255, green: 161/255, blue: 53/255, alpha: 1.0)
+            resposta.backgroundColor = UIColor.respostaCorreta
         } else {
-            resposta.backgroundColor = UIColor(red: 211/255, green: 17/255, blue: 17/255, alpha: 1.0)
+            resposta.backgroundColor = UIColor.respostaErrada
         }
+    }
+    
+    func configurarTempoEntreQuestoes(_ seletor: Selector) {
+        Timer.scheduledTimer(timeInterval: 0.75, target: self, selector: seletor, userInfo: nil, repeats: false)
     }
     
     func proximaQuestao() {
         if numeroQuestao < questoes.count - 1 {
             numeroQuestao += 1
-            Timer.scheduledTimer(timeInterval: 0.75, target: self, selector: #selector(configurarQuestao), userInfo: nil, repeats: false)
+            configurarTempoEntreQuestoes(#selector(configurarQuestao))
         } else {
-            finalizarQuiz()
-        }
-    }
-    
-    func finalizarQuiz() {
-        performSegue(withIdentifier: "irParaDesempenhoDoQuiz", sender: nil)
-    }
-    
-    @objc func configurarQuestao() {
-        tituloQuestao.text = questoes[numeroQuestao].titulo
-        for botao in botoesRespostas {
-            let tituloRespostaBotao = questoes[numeroQuestao].respostas[botao.tag]
-            botao.setTitle(tituloRespostaBotao, for: .normal)
-            botao.backgroundColor = UIColor(red: 116/255, green: 50/255, blue: 255/255, alpha: 1.0)
+            configurarTempoEntreQuestoes(#selector(finalizarQuiz))
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let desempenhoVC = segue.destination as? DesempenhoViewController {
             desempenhoVC.pontuacao = pontuacao
+        }
+    }
+    
+    func desbloquearRespostas() {
+        for resposta in respostas {
+            resposta.isEnabled = true
+        }
+    }
+    
+    @objc func bloquearRespostas() {
+        for resposta in respostas {
+            resposta.isEnabled = false
+        }
+    }
+    
+    @objc func finalizarQuiz() {
+        performSegue(withIdentifier: "irParaDesempenhoDoQuiz", sender: nil)
+    }
+    
+    @objc func configurarQuestao() {
+        desbloquearRespostas()
+        questao.text = questoes[numeroQuestao].titulo
+        for resposta in respostas {
+            let tituloRespostaBotao = questoes[numeroQuestao].respostas[resposta.tag]
+            resposta.setTitle(tituloRespostaBotao, for: .normal)
+            resposta.backgroundColor = UIColor(red: 116/255, green: 50/255, blue: 255/255, alpha: 1.0)
+            resposta.addTarget(self, action: #selector(bloquearRespostas), for: .touchDown)
         }
     }
     

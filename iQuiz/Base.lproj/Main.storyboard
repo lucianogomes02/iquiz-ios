@@ -137,10 +137,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="iB3-6c-dhT"/>
                     <connections>
-                        <outlet property="tituloQuestao" destination="dXe-gc-e5r" id="PUD-YV-4sw"/>
-                        <outletCollection property="botoesRespostas" destination="TU0-Nu-CNv" collectionClass="NSMutableArray" id="r0s-Ax-RNH"/>
-                        <outletCollection property="botoesRespostas" destination="BsG-Kq-uy9" collectionClass="NSMutableArray" id="EPQ-h3-rEy"/>
-                        <outletCollection property="botoesRespostas" destination="QOV-pU-TWa" collectionClass="NSMutableArray" id="Mxl-aw-HbF"/>
+                        <outlet property="questao" destination="dXe-gc-e5r" id="PUD-YV-4sw"/>
+                        <outletCollection property="respostas" destination="TU0-Nu-CNv" collectionClass="NSMutableArray" id="r0s-Ax-RNH"/>
+                        <outletCollection property="respostas" destination="BsG-Kq-uy9" collectionClass="NSMutableArray" id="EPQ-h3-rEy"/>
+                        <outletCollection property="respostas" destination="QOV-pU-TWa" collectionClass="NSMutableArray" id="Mxl-aw-HbF"/>
                         <segue destination="sQ1-gc-fHD" kind="show" identifier="irParaDesempenhoDoQuiz" id="4i8-CE-k5z"/>
                     </connections>
                 </viewController>
@@ -236,6 +236,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="4i8-CE-k5z"/>
         <segue reference="atr-44-ikg"/>
     </inferredMetricsTieBreakers>
     <resources>
