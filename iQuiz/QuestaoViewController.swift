@@ -54,7 +54,13 @@ class QuestaoViewController: UIViewController {
         if numeroQuestao < questoes.count - 1 {
             numeroQuestao += 1
             Timer.scheduledTimer(timeInterval: 0.75, target: self, selector: #selector(configurarQuestao), userInfo: nil, repeats: false)
+        } else {
+            finalizarQuiz()
         }
+    }
+    
+    func finalizarQuiz() {
+        performSegue(withIdentifier: "irParaDesempenhoDoQuiz", sender: nil)
     }
     
     @objc func configurarQuestao() {
@@ -64,6 +70,14 @@ class QuestaoViewController: UIViewController {
             botao.setTitle(tituloRespostaBotao, for: .normal)
             botao.backgroundColor = UIColor(red: 116/255, green: 50/255, blue: 255/255, alpha: 1.0)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let desempenhoVC = segue.destination as? DesempenhoViewController
+        else {
+            return
+        }
+        desempenhoVC.pontuacao = pontuacao
     }
     
 

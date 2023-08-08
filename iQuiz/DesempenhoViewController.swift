@@ -8,6 +8,7 @@
 import UIKit
 
 class DesempenhoViewController: UIViewController {
+    var pontuacao: Int?
 
     @IBOutlet weak var resultadoQuiz: UILabel!
     
@@ -24,6 +25,7 @@ class DesempenhoViewController: UIViewController {
     }
     
     func configurarLayout() {
+        navigationItem.hidesBackButton = true
         botaoReiniciarQuiz.layer.cornerRadius = 12.0
     }
     

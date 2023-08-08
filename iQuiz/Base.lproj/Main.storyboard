@@ -141,6 +141,7 @@
                         <outletCollection property="botoesRespostas" destination="TU0-Nu-CNv" collectionClass="NSMutableArray" id="r0s-Ax-RNH"/>
                         <outletCollection property="botoesRespostas" destination="BsG-Kq-uy9" collectionClass="NSMutableArray" id="EPQ-h3-rEy"/>
                         <outletCollection property="botoesRespostas" destination="QOV-pU-TWa" collectionClass="NSMutableArray" id="Mxl-aw-HbF"/>
+                        <segue destination="sQ1-gc-fHD" kind="show" identifier="irParaDesempenhoDoQuiz" id="4i8-CE-k5z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AYf-52-VaW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -152,23 +153,23 @@
             <objects>
                 <viewController id="sQ1-gc-fHD" customClass="DesempenhoViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kfF-Q4-vve">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você finalizou o iQuiz!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0i-g1-6KF">
-                                <rect key="frame" x="64" y="171" width="265" height="76.666666666666686"/>
+                                <rect key="frame" x="64" y="112" width="265" height="76.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentual final: 20%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rm-Ja-tku">
-                                <rect key="frame" x="64" y="468.33333333333331" width="265" height="32.333333333333314"/>
+                                <rect key="frame" x="64" y="409.33333333333331" width="265" height="32.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ti9-hc-oe8">
-                                <rect key="frame" x="64" y="572.66666666666663" width="265" height="62"/>
+                                <rect key="frame" x="64" y="513.66666666666663" width="265" height="62"/>
                                 <color key="backgroundColor" red="0.45490196078431372" green="0.19607843137254902" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="PXx-GV-f9R"/>
@@ -177,11 +178,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reiniciar Quiz"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="atr-44-ikg"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="atr-44-ikg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você acertou 2 de 10 questões." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1r3-3P-0Ai">
-                                <rect key="frame" x="64" y="319.66666666666669" width="265" height="76.666666666666686"/>
+                                <rect key="frame" x="64" y="260.66666666666669" width="265" height="76.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -204,6 +205,7 @@
                             <constraint firstItem="0Rm-Ja-tku" firstAttribute="leading" secondItem="sHR-bt-cYz" secondAttribute="leading" constant="64" id="zV2-lk-djE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="KqL-Y4-1ku"/>
                     <connections>
                         <outlet property="botaoReiniciarQuiz" destination="ti9-hc-oe8" id="WHs-9M-1L6"/>
                         <outlet property="percentualDeAcertos" destination="0Rm-Ja-tku" id="x0s-Mm-pqF"/>
@@ -234,6 +236,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="4i8-CE-k5z"/>
         <segue reference="atr-44-ikg"/>
     </inferredMetricsTieBreakers>
     <resources>
