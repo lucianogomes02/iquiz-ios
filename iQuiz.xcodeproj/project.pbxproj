@@ -62,18 +62,34 @@
 		BA65744B2A7B6ED60043BFA2 /* iQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				BABC2D882A81CA2A00B273A7 /* Modelo */,
+				BABC2D872A81C9FA00B273A7 /* ViewController */,
 				BA65744C2A7B6ED60043BFA2 /* AppDelegate.swift */,
 				BA65744E2A7B6ED60043BFA2 /* SceneDelegate.swift */,
-				BA6574502A7B6ED60043BFA2 /* ViewController.swift */,
 				BA6574522A7B6ED60043BFA2 /* Main.storyboard */,
 				BA6574552A7B6ED70043BFA2 /* Assets.xcassets */,
 				BA6574572A7B6ED70043BFA2 /* LaunchScreen.storyboard */,
 				BA65745A2A7B6ED70043BFA2 /* Info.plist */,
-				BA91D9242A7E0D8400947562 /* QuestaoViewController.swift */,
-				BAFBB53F2A80B8A600E38DC5 /* Questao.swift */,
-				BAD69C8F2A81BAFF00B3452A /* DesempenhoViewController.swift */,
 			);
 			path = iQuiz;
+			sourceTree = "<group>";
+		};
+		BABC2D872A81C9FA00B273A7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BA6574502A7B6ED60043BFA2 /* ViewController.swift */,
+				BA91D9242A7E0D8400947562 /* QuestaoViewController.swift */,
+				BAD69C8F2A81BAFF00B3452A /* DesempenhoViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BABC2D882A81CA2A00B273A7 /* Modelo */ = {
+			isa = PBXGroup;
+			children = (
+				BAFBB53F2A80B8A600E38DC5 /* Questao.swift */,
+			);
+			path = Modelo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
