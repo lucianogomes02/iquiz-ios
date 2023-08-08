@@ -73,11 +73,9 @@ class QuestaoViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let desempenhoVC = segue.destination as? DesempenhoViewController
-        else {
-            return
+        if let desempenhoVC = segue.destination as? DesempenhoViewController {
+            desempenhoVC.pontuacao = pontuacao
         }
-        desempenhoVC.pontuacao = pontuacao
     }
     
 
